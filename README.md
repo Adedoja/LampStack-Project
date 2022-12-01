@@ -87,11 +87,6 @@ Create the directory for 'myproject' using ```mkdir``` command as follows:
 ```
 sudo mkdir /var/www/myproject
 ```
-Next, assign ownership of the directory with your current system user:
-
-```
-sudo chown -R $USER:$USER /var/www/myproject
-```
 
 After that, assign ownership of the directory with your current system user:
 
@@ -122,7 +117,9 @@ CustomLog ${APACHE_LOG_DIR}/access.log combined
 
 Use ```a2ensite``` command to enable the new virtual host:
 
-sudo ```a2ensite``` newproject
+```
+sudo a2ensite newproject
+```
 
 To disable Apache’s default website use a2dissite command, type:
 
@@ -141,6 +138,64 @@ Reload Apache so these changes take effect:
 ``` 
 sudo systemctl reload apache2
 ```
+
+Reload your page in the browser
+
+![](https://github.com/Adedoja/LampStack-Project/blob/main/LampStack%20Files/webpage-devops.PNG)
+
+## STEP 6 --> ENABLING PHP ON THE WEBSITE
+With the default DirectoryIndex settings on Apache, a file named index.html will always take precedence over an index.php file.
+
+In case you want to change this behavior, you’ll need to edit the /etc/apache2/mods-enabled/dir.conf file and change the
+
+order in which the index.php file is listed within the DirectoryIndex directive:
+
+```
+sudo nano /etc/apache2/mods-enabled/dir.conf
+```
+
+```
+<IfModule mod_dir.c>
+#Change this:
+#DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm
+#To this:
+DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
+</IfModule>
+```
+
+Save and close the file, reload Apache so the changes take effect:
+
+```
+sudo systemctl reload apache2
+```
+To verify if this works,
+- Create a PHP script to test that PHP is correctly installed and configured on your server.
+- Create a new file named index.php inside your custom web root folder: 
+
+```
+nano /var/www/newproject/index.php
+```
+
+This will open a blank file. Add the following text, which is valid PHP code, inside the file:
+
+```
+<?php
+phpinfo();
+```
+
+When you are finished, save and close the file, refresh the page and you will see a page similar to this:
+
+![](https://github.com/Adedoja/LampStack-Project/blob/main/LampStack%20Files/webphp-devops.PNG)
+
+So, that is everything you need to know about LAMP WEB STACK. 
+
+
+
+
+
+
+
+
 
 
 
