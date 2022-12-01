@@ -40,13 +40,15 @@ You can also check it out in your browser to view the Apache default page (http:
 ![](https://github.com/Adedoja/LampStack-Project/blob/main/LampStack%20Files/apache2-devops.PNG)
 
 ## STEP 3 --> INSTALLING MYSQL
-To install MySQL, run the ```
+To install MySQL, run the command below:
+
+```
 sudo apt install mysql-server
 ```
 
-When prompted, confirm installation by typing Y which means yes and then ENTER.
+When prompted, confirm installation by typing Y which means yes and then ENTER. Once the installation is finished,
 
-When the installation is finished, log in to the MySQL console and  type:
+log in to the MySQL console and  type:
 
 ```
 sudo mysql
@@ -58,9 +60,17 @@ This will take you to the MySQL server database. Set up your password using the 
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'yourpassword';
 ```
 
-To exit, run ```exit```
+To exit, run:
 
-Then run ```sudo mysql_secure_installation```
+```
+exit
+```
+
+Then run:
+
+```
+sudo mysql_secure_installation
+```
 
 ![](https://github.com/Adedoja/LampStack-Project/blob/main/LampStack%20Files/mysql-devopos.PNG)
 
@@ -82,7 +92,7 @@ sudo apt install php libapache2-mod-php php-mysql
 ## STEP 5 --> CREATING A VIRTUAL HOST
 In this project, you will set up a domain called myproject, but you can replace this with any domain of your choice.
 
-Create the directory for 'myproject' using ```mkdir``` command as follows:
+Create the directory for 'myproject' using the "mkdir" command as follows:
 
 ```
 sudo mkdir /var/www/myproject
