@@ -42,7 +42,7 @@ To install MySQL, run the ```sudo apt install mysql-server```
 
 When prompted, confirm installation by typing Y which means yes and then ENTER.
 
-When the installation is finished, log in to the MySQL console and  type ->
+When the installation is finished, log in to the MySQL console and  type:
 
 ```sudo mysql
 ```
