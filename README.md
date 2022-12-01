@@ -49,13 +49,14 @@ When the installation is finished, log in to the MySQL console and  type ->
 
 This will take you to the MySQL server database. Set up your password using the command below:
 
-```ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord';
+```ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'yourpassword';
 ```
 
 To exit, run ```exit```
 
-Then run ```sudo mysql_secure_installation````
+Then run ```sudo mysql_secure_installation```
 
+![](https://github.com/Adedoja/LampStack-Project/blob/main/LampStack%20Files/mysql-devopos.PNG)
 
 
 
