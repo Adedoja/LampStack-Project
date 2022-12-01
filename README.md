@@ -1,4 +1,4 @@
-# LampStack-Project
+# LAMP STACK PROJECT
 
 ## WHAT'S NEEDED:
 
@@ -12,7 +12,15 @@ Launch an instance in the cloud using Ubuntu's package manager.
 ![](https://github.com/Adedoja/LampStack-Project/blob/main/LampStack%20Files/aws-devops.PNG)
 
 
-SSH into the EC2 instance 
+SSH into the EC2 instance using your downloaded key and run the command below to update the
+
+list of packages in the package manager
+
+```
+sudo apt update
+```
+
+
 
 
 
